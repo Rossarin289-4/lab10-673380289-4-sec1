@@ -1,3 +1,23 @@
+## Test Results
+
+ผลการทดสอบ API ถูกจัดเก็บไว้ในโฟลเดอร์ `test-results/`
+
+ภายในโฟลเดอร์ประกอบด้วยภาพผลการทดสอบแต่ละ Endpoint ดังนี้:
+
+| File | Description |
+|---|---|
+| `1_GET_products.png` | ทดสอบ GET Product ทั้งหมด |
+| `2_GET_product_byId.png` | ทดสอบ GET Product ตาม ID |
+| `3_POST_create_product.png` | ทดสอบ POST สร้าง Product |
+| `4_after_POST_create_product.png` | ตรวจสอบ Product หลังจากสร้าง |
+| `5_DELETE_product.png` | ทดสอบ DELETE Product |
+| `6_after_DELETE_product.png` | ตรวจสอบ Product หลังจากลบ |
+| `7_GET_products_by_category.png` | ทดสอบค้นหา Product ตาม Category |
+| `8_GET_discounted_price.png` | ทดสอบราคาหลัง Discount |
+| `Lab10_673380289-4Sec1.pdf` | รายงานอธิบายการทำงานของ Lab 10 |
+
+---
+
 # ⚡ Lab 10: Spring WebFlux & WebClient
 
 **วิชา:** CP353002 หลักการออกแบบและพัฒนาซอฟต์แวร์  
