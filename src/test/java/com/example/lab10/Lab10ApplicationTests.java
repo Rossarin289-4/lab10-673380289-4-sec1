@@ -1,10 +1,12 @@
 package com.example.lab10;
 
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
 import com.example.lab10.model.Product;
 import com.example.lab10.repository.ProductRepository;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import reactor.test.StepVerifier;
 
 /**
@@ -60,17 +62,36 @@ class Lab10ApplicationTests {
         // Hint: StepVerifier.create(repository.findAll())
         //         .expectNextCount(3)   ← มี 3 รายการ
         //         .verifyComplete()
+        StepVerifier.create(repository.findAll()).expectNextCount(3).verifyComplete();
     }
 
     @Test
     void testSave() {
         // TODO: ทดสอบ save() บันทึกแล้วคืน Product
         // Hint: สร้าง Product ใหม่ → save → expectNext → verifyComplete
+        ProductRepository repo = new ProductRepository();
+
+        Product product = new Product(
+                "4",
+                "Test Product",
+                "Electronics",
+                "TestBrand",
+                10,
+                1000.0,
+                "NONE"
+        );
+        
+        StepVerifier.create(repo.save(product)).expectNextMatches(p ->
+            p.getId().equals("4") 
+            && p.getName().equals("Test Product") )
+            .verifyComplete();
     }
 
     @Test
     void testFindByCategory() {
         // TODO: ทดสอบ findByCategory("Electronics")
         // Hint: expectNextCount(3) เพราะมี 3 รายการใน Electronics
+        StepVerifier.create(repository.findByCategory("Electronics"))
+            .expectNextCount(3).verifyComplete();
     }
 }

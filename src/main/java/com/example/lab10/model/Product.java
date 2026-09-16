@@ -20,16 +20,16 @@ public class Product {
     public Product() {}
 
     public Product(String id, String name, String category,
-                   String brand, Integer stock, Double price,
-                   String discountType) {
-        this.id          = id;
-        this.name        = name;
-        this.category    = category;
-        this.brand       = brand;
-        this.stock       = stock;
-        this.price       = price;
-        this.discountType = discountType;
-    }
+        String brand, Integer stock, Double price,
+        String discountType) {
+            this.id          = id;
+            this.name        = name;
+            this.category    = category;
+            this.brand       = brand;
+            this.stock       = stock;
+            this.price       = price;
+            this.discountType = discountType;
+        }
 
     // ── Getters & Setters ─────────────────────────────────
     public String  getId()           { return id; }
